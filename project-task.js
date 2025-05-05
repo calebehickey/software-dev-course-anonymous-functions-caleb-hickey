@@ -39,6 +39,9 @@ const todos = [
   3. Return only the tasks that are not completed.
   */
   
+let done = todos.filter((todos) => todos.completed == false)
+  console.log(done)
+
   
   /*
   🔹 Task 2: Sort Tasks by Priority
@@ -49,6 +52,9 @@ const todos = [
   3. Sort tasks in ascending order of priority (1 = highest).
   */
   
+  let ranking = todos.sort((a,b) => b.priority - a.priority);
+  console.log(ranking);
+
   
   /*
   🔹 Task 3: Mark All Tasks as Completed
@@ -59,7 +65,10 @@ const todos = [
   3. Change the `completed` property to `true` for every task.
   */
   
+  let markAllCompleted = todos.map((todos) => todos.completed = true) 
   
+  console.log(todos);
+
   /*
   🔹 Task 4: Combine Filters
   
@@ -69,7 +78,18 @@ const todos = [
   3. Use method chaining to perform both steps together.
   */
   
+  const todos2 = [
+    { task: "Wash the dishes", completed: false, priority: 3 },
+    { task: "Write a blog post", completed: true, priority: 1 },
+    { task: "Buy groceries", completed: false, priority: 2 },
+    { task: "Study JavaScript", completed: true, priority: 1 },
+    { task: "Walk the dog", completed: false, priority: 2 },
+  ];
   
+  let combineFilters = todos2
+    .filter((todos2) => todos2.completed == false)
+    .sort((a,b) => b.priority - a.priority);
+  console.log(combineFilters);
   // ============================================
   // 🧪 Console Test Your Work
   // ============================================
